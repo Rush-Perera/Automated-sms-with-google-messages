@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
 import openpyxl
 import time
 import sys
@@ -17,8 +16,8 @@ print("*************************************************************")
 print("\n")
 
 print("Please enter the limit from excel file :")
-st = int(input("1. Start point"))
-ed = int(input("2. End point"))
+st = int(input("1. Start point "))
+ed = int(input("2. End point "))
 
 #  Check here for update
 service = Service('C:\\Users\\Sudeera Perera\\msedgedriver.exe')
@@ -40,8 +39,6 @@ count = 0
 while(st<=ed):
 
     cl = sh.cell(st,1)
-
-    # element = driver.find_element(By.XPATH,'//*[@id="mat-chip-list-0"]/div/input')
     # ---  Contact input ---
     element = driver.find_element(By.XPATH,'/html/body/mw-app/mw-bootstrap/div/main/mw-main-container/div/mw-new-conversation-container/mw-new-conversation-sub-header/div/div[2]/mw-contact-chips-input/div/mat-chip-listbox/div/input')
     element.send_keys(cl.value)
